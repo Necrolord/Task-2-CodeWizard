@@ -1,0 +1,19 @@
+sudo usermod -aG ubuntu docker
+
+reboot
+
+sudo chown -R $USER $HOME/.minikube; chmod -R u+wrx $HOME/.minikube
+
+minikube start
+
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+kubectl cluster-info
+kubectl get nodes
+
+
+
+chmod 700 get_helm.sh
+./get_helm.sh
+
